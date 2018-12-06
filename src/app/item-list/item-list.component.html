@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th class="pointer" (click)="onSortByName()" scope="col">Name</th>
+      <th scope="col">Used On</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- <app-url-item *ngFor="let url of urls"></app-url-item> -->
+    <tr *ngFor="let url of urls">
+      <td>{{ url.name | uppercase }}</td>
+      <td>{{ url.date | date:'medium' }}</td>
+      <td>
+        <a class="btn btn-primary" (click)=onUpdateUrlDate(url.id) target="_blank" href="{{ url.url }}">Open</a>
+        <button class="btn btn-danger" (click)="onRemoveUrl(url.id)">Remove</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
