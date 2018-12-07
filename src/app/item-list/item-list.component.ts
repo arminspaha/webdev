@@ -7,9 +7,9 @@ import { ItemListService } from './item-list.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: "app-item-list",
-  templateUrl: "./item-list.component.html",
-  styleUrls: ["./item-list.component.css"]
+  selector: 'app-item-list',
+  templateUrl: './item-list.component.html',
+  styleUrls: ['./item-list.component.css']
 })
 export class ItemListComponent implements OnInit, OnDestroy {
   urls: {
