@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ItemListComponent } from './item-list/item-list.component';
-import { UrlItemComponent } from './item-list/url-item/url-item.component';
 import { AddComponent } from './add/add.component';
 import { BrokenComponent } from './broken/broken.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,7 +16,6 @@ import { OrderByDatePipe } from './order-by-date.pipe';
     AppComponent,
     HomeComponent,
     ItemListComponent,
-    UrlItemComponent,
     AddComponent,
     BrokenComponent,
     ErrorPageComponent,

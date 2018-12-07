@@ -1,7 +1,16 @@
 <table class="table">
   <thead>
     <tr>
-      <th class="pointer" (click)="onSortByName()" scope="col">Name</th>
+      <th (click)="onSortByName()" scope="col">
+        <div class="row">
+          <div class="col-md-4 pr-0">Name</div>
+          <div class="col-md-3 pl-0 pointer">
+            <i class="material-icons">
+              sort_by_alpha
+            </i>
+          </div>
+        </div>
+      </th>
       <th scope="col">Used On</th>
       <th scope="col">Options</th>
     </tr>

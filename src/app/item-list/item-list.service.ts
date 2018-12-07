@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { map } from 'rxjs/operators';
 import { LocalStorage } from '@ngx-pwa/local-storage';
-import { Subject } from 'rxjs';
-import { NgForm } from '@angular/forms';
+import { Subject, BehaviorSubject } from 'rxjs';
 
 interface Url {
   id: number;
@@ -17,8 +17,8 @@ interface Url {
 export class ItemListService {
   private length: number;
   private url: Url;
-  returnBrokenUrls = new Subject();
-  showBrokenUrls = new Subject();
+  returnBrokenUrls = new BehaviorSubject<boolean>(false);
+  showBrokenUrls = new Subject<boolean>();
 
   constructor(protected localStorage: LocalStorage) {}
 
@@ -26,13 +26,7 @@ export class ItemListService {
     return this.localStorage.getItem('urls').pipe(
       map((response: any) => {
         if (brokenUrl) {
-          const tempBrokenUrl: {
-            id: number;
-            name: string;
-            url: string;
-            description: string;
-            date: Date;
-          }[] = [];
+          const tempBrokenUrl: Url[] = [];
           response.forEach(element => {
             if (!this.isValidURL(element.url)) {
               tempBrokenUrl.push(element);
