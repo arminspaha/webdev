@@ -3,7 +3,7 @@
     <tr>
       <th (click)="onSortByName()" scope="col">
         <div class="row">
-          <div class="col-md-4 pr-0">Name</div>
+          <div class="col-md-auto pr-0">Name</div>
           <div class="col-md-3 pl-0 pointer">
             <i class="material-icons">
               sort_by_alpha
@@ -22,7 +22,7 @@
       <td>{{ url.date | date:'medium' }}</td>
       <td>
         <a class="btn btn-primary" (click)=onUpdateUrlDate(url.id) target="_blank" href="{{ url.url }}">Open</a>
-        <button class="btn btn-danger" (click)="onRemoveUrl(url.id)">Remove</button>
+        <button class="btn btn-danger my-1" (click)="onRemoveUrl(url.id)">Remove</button>
       </td>
     </tr>
   </tbody>
