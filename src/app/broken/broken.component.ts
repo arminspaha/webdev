@@ -23,11 +23,7 @@ export class BrokenComponent implements OnInit, OnDestroy {
     this.itemListService.returnBrokenUrls.next(true);
 
     this.subscription = this.itemListService.showBrokenUrls.subscribe((condition: boolean) => {
-      if (condition) {
-        this.buttonDisabled = false;
-      } else {
-        this.buttonDisabled = true;
-      }
+      this.buttonDisabled = !condition;
     });
   }
 
